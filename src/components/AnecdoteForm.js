@@ -1,15 +1,21 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { new_anec } from "../reducers/anecdoteReducer";
+import { noti_acce } from "../reducers/notificationReducer";
 
 const AnecdoteForm = () => {
+
   const dispatch = useDispatch();
 
   const submit = (e) => {
     e.preventDefault();
     const content = e.target.anec.value;
     dispatch(new_anec(content));
+    dispatch(noti_acce(content))
     e.target.anec.value = "";
+    setTimeout(() => {
+    dispatch(noti_acce(null))  
+    }, 5000);
   };
   return (
     <>
