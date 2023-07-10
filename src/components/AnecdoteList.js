@@ -20,7 +20,7 @@ const AnecdoteList = () => {
   //const byVotes = (b1, b2) => b2.votes - b1.votes;
 
   const vote = (anecdote) => {
-    console.log("Anecdote--", anecdote);
+    //console.log("Anecdote--", anecdote);
     dispatch(vote_inc(anecdote));
     dispatch(noti_acce(anecdote.content));
     setTimeout(() => {

@@ -1,15 +1,11 @@
 import { useSelector } from "react-redux";
 
 const Notification = () => {
-
   const notification = useSelector(({ anecdote, noti }) => {
     if (noti) {
       return noti;
     }
   });
-
-  
-
 
   const style = {
     border: "solid",
